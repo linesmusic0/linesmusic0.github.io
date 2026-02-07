@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cantante Profesional | English Songs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #ff3d81;
+      --secondary: #ff9ec7;
+      --accent: #7c3aed;
+      --dark: #0b0614;
+      --light: #ffffff;
+      --glass: rgba(255, 255, 255, 0.14);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0b0614, #1a0f2e);
+      color: var(--light);
+      line-height: 1.6;
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      background:
+        radial-gradient(circle at top, rgba(255,61,129,0.35), transparent 60%),
+        radial-gradient(circle at bottom, rgba(124,58,237,0.25), transparent 60%);
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.8rem;
+      margin-bottom: 1rem;
+    }
+
+    header p {
+      max-width: 620px;
+      margin: 0 auto 2.5rem;
+      font-size: 1.15rem;
+      opacity: 0.9;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 2.2rem;
+      border-radius: 50px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(255,61,129,0.45);
+    }
+
+    /* NAV */
+    .nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 3rem;
+      background: rgba(11,6,20,0.55);
+      backdrop-filter: blur(14px);
+      z-index: 1000;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      transition: width 0.3s;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    section {
+
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    /* SONGS */
+    .songs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .song-card {
+      background: var(--glass);
+      backdrop-filter: blur(12px);
+      border-radius: 22px;
+      padding: 2rem;
+      box-shadow: 0 25px 45px rgba(0,0,0,0.35);
+      transition: transform 0.3s;
+    }
+
+    .song-card:hover { transform: translateY(-6px); }
+
+    .song-card h3 { margin-bottom: 0.4rem; font-weight: 600; }
+
+    .song-card p { font-size: 0.95rem; opacity: 0.85; margin-bottom: 1rem; }
+
+    audio { width: 100%; margin-top: 0.5rem; }
+
+    /* ABOUT */
+    .about {
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+      font-size: 1.05rem;
+      opacity: 0.9;
+    }
+
+    /* CONTACT */
+    .contact {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .contact-card {
+      background: var(--glass);
+      backdrop-filter: blur(12px);
+      padding: 2rem;
+      border-radius: 20px;
+      text-align: center;
+    }
+
+    .contact-card h3 { margin-bottom: 0.5rem; }
+
+    footer {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.6rem; }
+      section h2 { font-size: 2.1rem; }
+
+      .nav {
+        padding: 1rem 1.5rem;
+      }
+
+      .nav-links {
+        gap: 1.2rem;
+      }
+    }
+      section h2 { font-size: 2.1rem; }
+    }
+    </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-logo">Line</div>
+    <ul class="nav-links">
+      <li><a href="#songs">Canciones</a></li>
+      <li><a href="#about">Sobre mí</a></li>
+      <li><a href="#contact">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <div>
+      <h1>Clara</h1>
+      <p>Cantante profesional de pop y soul en inglés. Canciones emocionales, elegantes y listas para el escenario y streaming.</p>
+      <a href="#songs" class="btn">Escuchar canciones</a>
+    </div>
+  </header>
+
+  <section id="songs">
+    <h2>Mis Canciones</h2>
+    <div class="songs">
+      <div class="song-card">
+        <h3>The Night We Met</h3>
+        <p>Balada pop con una atmósfera nocturna y emocional.</p>
+        <audio controls>
+          <source src="midnight-dreams.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+      <div class="song-card">
+        <h3>BIRDS OF FEATHER</h3>
+        <p>Soul moderno con un estribillo potente y letras profundas.</p>
+        <audio controls>
+          <source src="broken-silence.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+      <div class="song-card">
+        <h3>Shine Again</h3>
+        <p>Tema optimista ideal para directos y playlists.</p>
+        <audio controls>
+          <source src="shine-again.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>Sobre mí</h2>
+    <div class="about">
+      <p>Soy una cantante profesional especializada en canciones en inglés, con influencias pop, soul y R&B. Mi música busca conectar emociones reales con un sonido elegante y actual, tanto en estudio como en directo.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contacto</h2>
+    <div class="contact">
+      <div class="contact-card">
+        <h3>Email</h3>
+        <p>lineproject04@gmail.com</p>
+      </div>
+      <div class="contact-card">
+        <h3>Instagram</h3>
+        <p>@linesmusic0</p>
+      </div>
+      <div class="contact-card">
+        <h3>Spotify</h3>
+        <p>clarabeoss</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Clara · English Songs
+  </footer>
+
+</body>
+</html>
